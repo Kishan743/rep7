@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Average Calculator</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+        }
+        input {
+            width: 300px;
+            padding: 10px;
+            font-size: 18px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+        #result {
+            margin-top: 30px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Average Calculator</h2>
+
+    <p>Enter numbers separated by commas</p>
+    <input id="numbers" placeholder="e.g. 10, 20, 30, 40">
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculate() {
+            let input = document.getElementById("numbers").value;
+            let arr = input.split(",").map(Number);
+
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+
+            let avg = sum / arr.length;
+
+            document.getElementById("result").innerText =
+                "Average = " + avg;
+        }
+    </script>
+
+</body>
+</html>
